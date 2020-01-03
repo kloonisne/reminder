@@ -1,0 +1,28 @@
+{% extends "remindme/skeleton.html" %}
+
+{% block content %}
+    &nbsp;
+    {% for rmnd in reminders %}
+    <div style="border:1px solid black;margin: auto; width: 50%;border-left: 6px solid #13b7d4;
+  background-color: #f3f5ed;border-radius: 8px;" >
+        &nbsp;
+             <table style="margin: auto; width: 50%;">
+            <tr>
+                <td colspan="2" style="text-align: center"><b><span style="font-size:25px;">{{rmnd.reminder}}</span></b></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center"><span style="font-size:20px;">{{rmnd.rmdate}}</span></td>
+            </tr>
+            <tr style="text-align: center">
+                <td><a href="{% url 'rmupdate' rmnd.id %}"><b>EDIT</b></a></td>
+                <td><a href="{% url 'rmdel' rmnd.id %}"><b>DELETE</b></a></td>
+
+            </tr>
+            </table>
+            &nbsp;
+            </div>
+
+    {% endfor %}
+
+
+{% endblock content %}>

@@ -1,0 +1,14 @@
+{% extends "remindme/skeleton.html" %}
+
+{% block content %}
+    <form action="" method="POST" >
+    {% csrf_token %}
+        Enter your reminder: </br>
+    {{form.reminder}}  </br>
+        Enter the date in format YYYY-MM-DD:</br>
+        {{form.rmdate}}  </br>
+    <button type="submit" >SUMBIT</button>
+    </form>
+
+
+{% endblock content %}
